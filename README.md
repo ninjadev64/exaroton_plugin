@@ -8,3 +8,16 @@ An UNOFFICIAL plugin to provide useful commands to servers hosting with exaroton
 4. Set "token" to your exaroton API token, obtained on the [account page](https://exaroton.com/account)
 5. Set "server" to your server's exaroton ID, obtained on the [servers page](https://exaroton.com/servers)
 6. Save the file and restart your server.
+
+### Commands
+```yaml
+credits:
+    description: "Check the amount of credits in the server owner's account"
+port:
+    description: "Get the current server port"
+dynip:
+    description: "Get the current server DynIP"
+publishlog:
+    description: "Publish your server log to mclo.gs and receive the link"
+    permission: "exaroton.publishlog"
+```
