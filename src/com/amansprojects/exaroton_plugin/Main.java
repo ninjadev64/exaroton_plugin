@@ -17,6 +17,7 @@ public class Main extends JavaPlugin {
         CommandHandler commandHandler = new CommandHandler(exarotonClient, server);
         getCommand("credits").setExecutor(commandHandler);
         getCommand("port").setExecutor(commandHandler);
+        getCommand("dynip").setExecutor(commandHandler);
         getCommand("publishlog").setExecutor(commandHandler);
         getLogger().info("The UNOFFICIAL exaroton plugin has successfully loaded!");
     }

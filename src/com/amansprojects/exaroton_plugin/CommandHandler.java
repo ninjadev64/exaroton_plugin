@@ -18,28 +18,23 @@ public class CommandHandler implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (label.equalsIgnoreCase("credits")) {
-            try {
+        try {
+            if (label.equalsIgnoreCase("credits")) {
                 sender.sendMessage(ChatColor.GREEN + "There are " + exarotonClient.getAccount().getCredits() + " credits in the server owner's account!");
-                return true;
-            } catch (APIException e) {
-                e.printStackTrace();
-                sender.sendMessage(ChatColor.RED + "An error occurred! Check the server console for more details.");
-            }
-        }
-        else if (label.equalsIgnoreCase("port")) {
-            sender.sendMessage((ChatColor.GREEN + "The server port is " + server.getPort() + "!"));
-            return true;
-        }
-        else if (label.equalsIgnoreCase("publishlog")) {
-            try {
+            } else if (label.equalsIgnoreCase("port")) {
+                sender.sendMessage((ChatColor.GREEN + "The server port is " + server.getPort() + "!"));
+            } else if (label.equalsIgnoreCase("dynip")) {
+                sender.sendMessage(ChatColor.GREEN + "The DynIP of this server is " + server.getHost() + ":" + server.getPort());
+            } else if (label.equalsIgnoreCase("publishlog")) {
                 sender.sendMessage(ChatColor.GREEN + "Your server log is shared at " + server.shareLog().getUrl() + "!");
-                return true;
-            } catch (APIException e) {
-                e.printStackTrace();
-                sender.sendMessage(ChatColor.RED + "An error occurred! Check the server console for more details.");
+            } else {
+                return false;
             }
+            return true;
+        } catch (APIException e) {
+            e.printStackTrace();
+            sender.sendMessage(ChatColor.RED + "An error occurred! Check the server console for more details.");
+            return false;
         }
-        return false;
     }
 }
