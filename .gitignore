@@ -1,0 +1,6 @@
+# Project exclude paths
+/out/
+.idea/
+java-exaroton-api.jar
+java-exaroton-api-javadoc.jar
+exaroton_plugin.iml

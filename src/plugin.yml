@@ -1,0 +1,23 @@
+name: "exaroton"
+main: com.amansprojects.exaroton_plugin.Main
+version: 1.0.0
+api-version: 1.18
+author: "ninjadev64"
+description: "An UNOFFICIAL plugin to provide useful commands to servers hosting with exaroton."
+
+commands:
+  credits:
+    description: "Check the amount of credits in the server owner's account"
+    usage: "/credits"
+  port:
+    description: "Get the current server port from the exaroton API"
+    usage: "/port"
+  publishlog:
+    description: "Publish your server log to mclo.gs and receive the link"
+    usage: "/publishlog"
+    permission: "exaroton.publishlog"
+
+permissions:
+  exaroton.publishlog:
+    default: op
+    description: "Use the /publishlog command"
