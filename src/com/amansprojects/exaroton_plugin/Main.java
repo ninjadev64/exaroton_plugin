@@ -12,7 +12,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         exarotonClient = new ExarotonClient(getConfig().getString("token"));
-        server = exarotonClient.getServer(getConfig().getString("server"));
+        server = exarotonClient.getCurrentServer();
         try { server.get(); } catch (APIException e) { e.printStackTrace(); }
         CommandHandler commandHandler = new CommandHandler(exarotonClient, server);
         getCommand("credits").setExecutor(commandHandler);
